@@ -13171,10 +13171,10 @@ zKxKnGCZmZmZmZlViRMsMzMzMzOzKnGCZWZmZmZmViX/H0mqoy4058LFAAAAAElFTkSuQmCC
 <ul>
 <li>waypoint, light are most relevant for learning both safety and efficiency.</li>
 <li>Waypoint is the only feature that provide the agent the direction to move, and lights play an important role at intersections.
-Ongoing should also be used for safety during left turns at intersections. </li>
+Ongoing should also be used for safety during left turns at intersections. Left should also be used to avoid crosstraffic while traffic from left is moving in forward direction and our cab wants to go right.</li>
 <li>I am not choosing deadline, right.<ul>
 <li>deadline - because it will increase the state space drastically.</li>
-<li>right - we can avoid this as it is not providing much relevant features and avoiding it will decrease the state space</li>
+<li>right - As long as vehicles are obeying traffic rules, whenever the traffic from right has a green signal to their forward or left direction, our cab will have a red light, so as long as we penalise our cab for moving forward or left while red light, traffic from right need not be considered and avoiding it will decrease the state space.</li>
 </ul>
 </li>
 </ul>
@@ -13212,8 +13212,8 @@ Ongoing should also be used for safety during left turns at intersections. </li>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>The size of the state space will be 128(4x2x4x4).<ul>
-<li>4(right, left,forward,None) for waypoint </li>
+<li>The size of the state space will be 96(3x2x4x4).<ul>
+<li>3(right, left,forward) for waypoint </li>
 <li>2(red,green) for light</li>
 <li>4(right, left,forward,None) for left</li>
 <li>4(right, left,forward,None) for ongoing</li>

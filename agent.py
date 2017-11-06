@@ -98,8 +98,9 @@ class LearningAgent(Agent):
         ## TO DO ##
         ###########
         
-        if state not in self.Q.keys():
-            self.Q[state] = {el:0 for el in self.valid_actions}
+        if self.learning == True :
+            if state not in self.Q.keys():
+                self.Q[state] = {el:0 for el in self.valid_actions}
         # When learning, check if the 'state' is not in the Q-table
         # If it is not, create a new dictionary for that state
         #   Then, for each action available, set the initial Q-value to 0.0
