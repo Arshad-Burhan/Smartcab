@@ -16527,8 +16527,8 @@ When the light is green and the waypoint is right, but still the smartcab isn't 
 <p><strong>Answer:</strong></p>
 <p>Future rewards won't work with this project because:-</p>
 <ul>
-<li>The states doesn't have any relation with the previous state, they are not connected. So, if reaching A was the goal ,and we reached there through state B, doesn't mean that you reach the goal even if you passed state B the next time. So, future rewards doesn't have much meaning.</li>
-<li>Also, the smartcab is made to learn only the next step from waypoint and the inputs. It is rewarded only based on the action it took on that state.</li>
+<li>The agent doesn't know how far it is to the destination. It won't be able to distinguish between a destination that is one intersection away vs a destination that is ten intersections away. So, It is not possible to propagate back rewards in a way that would distinguishes both of these scenarios.</li>
+<li>Also,the destination changes at every trial. So, after a number of trials, we would in essence be propagating back rewards from every intersection that was once a destination.</li>
 </ul>
 
 </div>
